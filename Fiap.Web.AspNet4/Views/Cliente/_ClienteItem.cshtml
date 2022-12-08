@@ -1,0 +1,31 @@
+﻿@model IList<ClienteModel>
+
+
+<table class="table table-striped" border="1" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <th data-field="id">Id</th>
+            <th data-field="name">Nome</th>
+            <th data-field="sobrenome">Representante</th>
+            <th class="actions" width="220">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td data-field="id">#@cliente.ClienteId</td>
+                <td data-field="name">@cliente.Nome</td>
+                <td data-field="sobrenome">@cliente.Representante.NomeRepresentante</td>
+                <td class="actions" width="220">
+                    <a asp-controller="Cliente" asp-action="Detalhe" asp-route-id="@cliente.ClienteId">Detalhe</a>
+                    <a asp-controller="Cliente" asp-action="Editar" asp-route-id="@cliente.ClienteId">Editar</a>
+                    <a asp-controller="Cliente" asp-action="Remover" asp-route-id="@cliente.ClienteId">Remover</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

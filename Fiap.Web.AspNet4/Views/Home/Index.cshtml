@@ -1,0 +1,23 @@
+﻿@using Fiap.Web.AspNet4.ViewModel
+@model HomeViewModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <h3>Pageviews</h3>
+    <p> @Model.PageViewCount K -  +@Model.PageViewGrowthPercentual%</p>
+
+    <h3>Users</h3>
+    <p> @Model.UserCount K -  +@Model.UserGrowthPercentaul%</p>
+
+    <h3>Assinaturas</h3>
+    <p> 50K -  +10%</p>
+
+
+
+</div>

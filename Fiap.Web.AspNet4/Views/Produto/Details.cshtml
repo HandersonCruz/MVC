@@ -1,0 +1,27 @@
+﻿@model ProdutoModel
+
+<h1>Details</h1>
+
+<div>
+    <h4>Detalhe do Produto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Model.ProdutoId
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.ProdutoNome
+        </dd>
+    </dl>
+
+    @if ( Model.ProdutosLojas.Count() > 0 ) {
+    <h5>Lojas</h5>
+
+        @foreach( var loja in Model.ProdutosLojas ) {
+            <p>@loja.LojaId - @loja.Loja.LojaNome</p>
+        }
+    }
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
